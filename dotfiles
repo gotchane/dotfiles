@@ -62,7 +62,7 @@ if [ ! -d ${DOT_DIRECTORY} ]; then
 fi
 
 cd ${DOT_DIRECTORY}
-source ./lib/brew
+#source ./lib/brew
 
 link_files() {
   for f in .??*
