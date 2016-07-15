@@ -59,3 +59,7 @@ function tmux_automatically_attach_session()
     fi
 }
 tmux_automatically_attach_session
+
+export GOPATH=$HOME/.golang
+export GOROOT=$( go env GOROOT )
+export PATH=$GOPATH/bin:$PATH
