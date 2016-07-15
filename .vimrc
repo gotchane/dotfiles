@@ -6,17 +6,19 @@
 "行数字を表示
 set number
  
- 
 "改行を削除できるようにする
 set backspace=2
  
 "swapfileを作らない
 set noswapfile
 
+"backupfileを作らない
+set nobackup
+
 "tmpファイルの保存先
-set directory=~/.vim/tmp
-set backupdir=~/.vim/tmp
-set undodir=~/.vim/tmp
+"set directory=~/.vim/tmp
+"set backupdir=~/.vim/tmp
+"set undodir=~/.vim/tmp
  
 "ヤンクをクリップボードにコピー
 set clipboard=unnamed,autoselect 
@@ -75,5 +77,3 @@ set background=dark
 set backspace=indent,eol,start      
  
 
- 
- 
