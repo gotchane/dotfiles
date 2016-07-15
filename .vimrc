@@ -20,7 +20,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
+" Solarized Colorscheme  
 NeoBundle 'altercation/vim-colors-solarized'
+
+" desert colorscheme
+NeoBundle 'fugalh/desert.vim'
+
+" Go development plugin for Vim
+NeoBundle 'fatih/vim-go'
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
@@ -98,7 +105,7 @@ syntax on
 set background=dark
  
 "カラースキームの設定
-colorscheme solarized
+colorscheme desert
  
 "-----------------------------------
 "for edit
