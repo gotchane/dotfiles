@@ -52,6 +52,8 @@ if [ ! -d ${DOT_DIRECTORY} ]; then
 
   if has "git"; then
     git clone --recursive "${REMOTE_URL}" "${DOT_DIRECTORY}"
+    git submodule init
+    git submodule update
   else
     curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOT_TARBALL}
     tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOT_DIRECTORY}
