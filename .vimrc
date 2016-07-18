@@ -106,7 +106,10 @@ set background=dark
  
 "カラースキームの設定
 colorscheme desert
- 
+
+" カーソル行のハイライト
+set cursorline
+
 "-----------------------------------
 "for edit
 "-----------------------------------
