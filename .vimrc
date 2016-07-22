@@ -26,8 +26,6 @@ NeoBundle 'altercation/vim-colors-solarized'
 " desert colorscheme
 NeoBundle 'fugalh/desert.vim'
 
-" Go development plugin for Vim
-NeoBundle 'fatih/vim-go'
 
 " Unite and create user interfaces
 NeoBundle 'Shougo/unite.vim'
@@ -37,6 +35,21 @@ NeoBundle 'Shougo/vimfiler'
 
 " Interactive command execution in Vim
 NeoBundle 'Shougo/vimproc'
+
+" Vim plugin that displays tags in a window, ordered by scope
+NeoBundle 'majutsushi/tagbar'
+
+" Go development plugin for Vim
+NeoBundle 'fatih/vim-go'
+
+" vim plugin providing godef support
+NeoBundle 'dgryski/vim-godef'
+
+" Extra plugin for golang
+NeoBundle 'vim-jp/vim-go-extra'
+
+" vim-ft-goは最新版のvimを使えない場合のみ
+NeoBundle 'google/vim-ft-go'
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
@@ -129,6 +142,10 @@ set backspace=indent,eol,start
 " 現在日時を入力
 nmap <C-o><C-o> <ESC>i<C-r>=strftime("%Y%m%d_")<CR>
 
+" 選択した部分を検索
+vnoremap * "zy:let @/ = @z<CR>n
+
+
 
 "-----------------------------------
 "for vim-go
@@ -151,4 +168,11 @@ nnoremap <Leader>e :silent ! start . <CR>
 " auto_cd有効
 let g:vimfiler_enable_auto_cd = 1
 
+
+"-----------------------------------
+""for Tagbar
+"-----------------------------------
+let g:tagbar_left = 0
+let g:tagbar_autofocus = 1
+nmap <F8> :TagbarToggle<CR>
 
