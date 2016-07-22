@@ -29,6 +29,15 @@ NeoBundle 'fugalh/desert.vim'
 " Go development plugin for Vim
 NeoBundle 'fatih/vim-go'
 
+" Unite and create user interfaces
+NeoBundle 'Shougo/unite.vim'
+
+" Powerful file explorer implemented by Vim script
+NeoBundle 'Shougo/vimfiler'
+
+" Interactive command execution in Vim
+NeoBundle 'Shougo/vimproc'
+
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
@@ -117,6 +126,8 @@ colorscheme desert
 "start:挿入位置より前の文字
 set backspace=indent,eol,start      
  
+" 現在日時を入力
+nmap <C-o><C-o> <ESC>i<C-r>=strftime("%Y%m%d_")<CR>
 
 
 "-----------------------------------
@@ -125,3 +136,19 @@ set backspace=indent,eol,start
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+
+
+"-----------------------------------
+""for VimFiler 
+"-----------------------------------
+nnoremap <F10> :VimFiler -split -simple -winwidth=30 -no-quit 
+nnoremap <F11> :UniteBookmarkAdd
+nnoremap <F12> :Unite bookmark
+
+" 編集中ファイルをエクスプローラで開く
+nnoremap <Leader>e :silent ! start . <CR>
+
+" auto_cd有効
+let g:vimfiler_enable_auto_cd = 1
+
+
