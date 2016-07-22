@@ -59,7 +59,7 @@ setopt correct
 ##############################################
 
 # 色の設定
-export LSCOLORS=Exfxcxdxbxegedabagacad
+export LSCOLORS=gxfxcxdxbxegedabagacag
 
 # 補完時の色の設定
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
@@ -69,6 +69,18 @@ export ZLS_COLORS=$LS_COLORS
 
 # lsコマンド時、自動で色がつく(ls -Gのようなもの？)
 export CLICOLOR=true
+
+# lsがカラー表示になるようエイリアスを設定
+case "${OSTYPE}" in
+darwin*)
+  # Mac
+    alias ls="ls -GF"
+    ;;
+linux*)
+  # Linux
+    alias ls='ls -F --color'
+    ;;
+esac
 
 #ファイル補完候補に色を付ける
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
