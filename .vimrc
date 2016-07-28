@@ -36,6 +36,12 @@ NeoBundle 'Shougo/vimfiler'
 " Interactive command execution in Vim
 NeoBundle 'Shougo/vimproc'
 
+" Next generation completion framework after neocomplcache.
+NeoBundle 'Shougo/neocomplete'
+
+"Run commands quickly. 
+NeoBundle 'thinca/vim-quickrun'
+
 " Vim plugin that displays tags in a window, ordered by scope
 NeoBundle 'majutsushi/tagbar'
 
@@ -154,9 +160,13 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
+"-----------------------------------
+"for Neocomplete 
+"-----------------------------------
+"let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 
 "-----------------------------------
-""for VimFiler 
+"for VimFiler 
 "-----------------------------------
 nnoremap <F10> :VimFiler -split -simple -winwidth=30 -no-quit 
 nnoremap <F11> :UniteBookmarkAdd
@@ -168,6 +178,13 @@ nnoremap <Leader>e :silent ! start . <CR>
 " auto_cd有効
 let g:vimfiler_enable_auto_cd = 1
 
+"-----------------------------------
+"for vim-quickrun
+"-----------------------------------
+"quickrunでgo testを走らせる
+autocmd BufRead,BufNewFile *_test.go set filetype=go.test
+let g:quickrun_config = {}
+let g:quickrun_config['go.test'] = {'command' : 'go', 'exec' : ['%c test']}
 
 "-----------------------------------
 ""for Tagbar
