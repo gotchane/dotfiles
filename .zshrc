@@ -127,6 +127,6 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 # Env settings
 ##############################################
 export LANG=ja_JP.UTF-8
-export GOPATH=$HOME/.golang
+export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
 export PATH=$GOPATH/bin:$PATH
