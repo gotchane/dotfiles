@@ -39,6 +39,8 @@ shift $((OPTIND - 1))
 case ${OSTYPE} in
   linux-gnu*)
     ;;
+  darwin*)
+    ;;
   *)
     echo $(tput setaf 1)Working only Linux!!$(tput sgr0)
     exit 1
