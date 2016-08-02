@@ -130,3 +130,5 @@ export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
