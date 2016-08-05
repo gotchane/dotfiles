@@ -26,6 +26,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 " desert colorscheme
 NeoBundle 'fugalh/desert.vim'
 
+" QFixHowm 
+NeoBundle 'fuenor/qfixhowm.git'
 
 " Unite and create user interfaces
 NeoBundle 'Shougo/unite.vim'
@@ -152,6 +154,11 @@ nmap <C-o><C-o> <ESC>i<C-r>=strftime("%Y%m%d_")<CR>
 vnoremap * "zy:let @/ = @z<CR>n
 
 
+"-----------------------------------
+"for vimproc
+"-----------------------------------
+
+let g:vimproc#download_windows_dll = 1
 
 "-----------------------------------
 "for vim-go
@@ -192,4 +199,19 @@ let g:quickrun_config['go.test'] = {'command' : 'go', 'exec' : ['%c test']}
 let g:tagbar_left = 0
 let g:tagbar_autofocus = 1
 nmap <F8> :TagbarToggle<CR>
+
+"-----------------------------------
+" QFixHowm
+"-----------------------------------
+
+"QFixHowmキーマップ
+let QFixHowm_Key = 'g'
+
+"howm_dirはファイルを保存したいディレクトリを設定。
+let howm_dir             = '~/memo'
+"howmファイル読込の際、howm_fileencodingに強制設定する
+let QFixHowm_ForceEncoding = 1
+let howm_fileformat      = 'unix'
+let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let QFixHowm_DiaryFile = 'diary/%Y/%m/%Y-%m-%d-000000.howm'
 
