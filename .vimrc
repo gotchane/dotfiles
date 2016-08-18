@@ -87,6 +87,9 @@ set noswapfile
 "backupfileを作らない
 set nobackup
 
+"undoファイルを作らない
+set noundofile
+
 "tmpファイルの保存先
 "set directory=~/.vim/tmp
 "set backupdir=~/.vim/tmp
