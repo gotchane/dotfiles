@@ -79,6 +79,10 @@ link_files() {
     fi
   done
 
+  # Creating nvim symlinks
+  ln -snfv ${DOT_DIRECTORY}/.vim ${HOME}/.config/nvim
+  ln -snfv ${DOT_DIRECTORY}/.vimrc ${HOME}/.config/nvim/init.vim
+
   echo $(tput setaf 2)Deploy dotfiles complete! $(tput sgr0)
 }
 

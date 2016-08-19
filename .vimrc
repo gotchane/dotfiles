@@ -1,75 +1,60 @@
 "-----------------------------------
-"for NeoBundle
+"for dein.vim
 "-----------------------------------
 
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-set runtimepath^=~/.vim/bundle/neobundle.vim/
+call dein#begin(expand('~/.vim/dein'))
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/neosnippet')
 
 " My Bundles here:
 " Solarized Colorscheme  
-NeoBundle 'altercation/vim-colors-solarized'
+call dein#add('altercation/vim-colors-solarized')
 
 " desert colorscheme
-NeoBundle 'fugalh/desert.vim'
+call dein#add('fugalh/desert.vim')
 
 " QFixHowm 
-NeoBundle 'fuenor/qfixhowm.git'
+call dein#add('fuenor/qfixhowm.git')
 
 " Unite and create user interfaces
-NeoBundle 'Shougo/unite.vim'
+call dein#add('Shougo/unite.vim')
 
 " Powerful file explorer implemented by Vim script
-NeoBundle 'Shougo/vimfiler'
+call dein#add('Shougo/vimfiler')
 
 " Interactive command execution in Vim
-NeoBundle 'Shougo/vimproc'
+call dein#add('Shougo/vimproc')
 
 " Next generation completion framework after neocomplcache.
-NeoBundle 'Shougo/neocomplete'
+call dein#add('Shougo/neocomplete')
 
 "Run commands quickly. 
-NeoBundle 'thinca/vim-quickrun'
+call dein#add('thinca/vim-quickrun')
 
 " Vim plugin that displays tags in a window, ordered by scope
-NeoBundle 'majutsushi/tagbar'
+call dein#add('majutsushi/tagbar')
 
 " Go development plugin for Vim
-NeoBundle 'fatih/vim-go'
+call dein#add('fatih/vim-go')
 
 " vim plugin providing godef support
-NeoBundle 'dgryski/vim-godef'
+call dein#add('dgryski/vim-godef')
 
 " Extra plugin for golang
-NeoBundle 'vim-jp/vim-go-extra'
+call dein#add('vim-jp/vim-go-extra')
 
 " vim-ft-goは最新版のvimを使えない場合のみ
-NeoBundle 'google/vim-ft-go'
+call dein#add('google/vim-ft-go')
 
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+call dein#end()
 
-call neobundle#end()
-
-" Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 "-----------------------------------
 "for general setting
