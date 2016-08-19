@@ -1,1 +1,0 @@
-/Users/goto_line/dotfiles/.vimrc
