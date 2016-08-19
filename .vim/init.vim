@@ -1,0 +1,1 @@
+/Users/goto_line/.vimrc
