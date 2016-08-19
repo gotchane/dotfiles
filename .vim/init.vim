@@ -1,1 +1,1 @@
-/Users/goto_line/.vimrc
+/Users/goto_line/dotfiles/.vimrc
