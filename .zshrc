@@ -131,5 +131,5 @@ export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 eval "$(rbenv init -)"
-export NODEBREW_ROOT=/usr/local/var/nodebrew
