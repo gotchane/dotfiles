@@ -136,7 +136,7 @@ colorscheme desert
 set backspace=indent,eol,start      
  
 " 現在日時を入力
-nmap <C-o><C-o> <ESC>i<C-r>=strftime("%Y%m%d_")<CR>
+nmap <C-o><C-o> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
 
 " 選択した部分を検索
 vnoremap * "zy:let @/ = @z<CR>n
