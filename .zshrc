@@ -3,7 +3,7 @@
 ###############################################
 
 # viモードを使用
-bindkey -v
+#bindkey -v
 
 # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
 setopt auto_param_slash
@@ -126,10 +126,37 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 ##############################################
 # Env settings
 ##############################################
+# 環境変数設定
 export LANG=ja_JP.UTF-8
-export GOPATH=$HOME/go
-export GOROOT=$( go env GOROOT )
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-eval "$(rbenv init -)"
+#export GOPATH=$HOME/go
+#export GOROOT=$( go env GOROOT )
+#export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#export PATH=$HOME/.nodebrew/current/bin:$PATH
+#eval "$(rbenv init -)"
+
+
+##############################################
+# Initial settings
+##############################################
+
+# ss先の場合tmux自動起動
+if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" && -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
+    function confirm {
+        MSG=$1
+        while :
+        do
+            echo -n "${MSG} [Y/N]: "
+            read ans
+            case $ans in
+                [yY]) return 0 ;;
+                [nN]) return 1 ;;
+            esac
+        done
+    }
+    option=""
+    if tmux has-session && tmux list-sessions; then
+        option="attach"
+    fi
+    tmux $option && confirm "exit?" && exit
+fi
