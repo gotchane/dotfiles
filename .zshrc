@@ -52,7 +52,7 @@ compinit
 setopt auto_pushd
 
 # コマンドミスを修正
-setopt correct
+#setopt correct
 
 ##############################################
 # View settings
