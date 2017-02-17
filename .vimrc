@@ -196,7 +196,7 @@ nmap <F8> :TagbarToggle<CR>
 let QFixHowm_Key = 'g'
 
 "howm_dirはファイルを保存したいディレクトリを設定。
-let howm_dir             = '~/memo'
+let howm_dir             = '~/note/memo'
 "howmファイル読込の際、howm_fileencodingに強制設定する
 let QFixHowm_ForceEncoding = 1
 let howm_fileformat      = 'unix'
