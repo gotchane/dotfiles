@@ -10,7 +10,6 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/neosnippet')
 
 " My Bundles here:
 " Solarized Colorscheme  
@@ -74,6 +73,9 @@ set nobackup
 
 "undoファイルを作らない
 set noundofile
+
+"保存されていないファイルがあるときでも別のファイルを開く
+set hidden
 
 "tmpファイルの保存先
 "set directory=~/.vim/tmp
@@ -163,7 +165,7 @@ let g:go_highlight_structs = 1
 "-----------------------------------
 "for VimFiler 
 "-----------------------------------
-nnoremap <F10> :VimFiler -split -simple -winwidth=30 -no-quit 
+nnoremap <F10> :VimFiler -split -simple -winwidth=50 -no-quit 
 nnoremap <F11> :UniteBookmarkAdd
 nnoremap <F12> :Unite bookmark
 
@@ -203,3 +205,5 @@ let howm_fileformat      = 'unix'
 let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
 let QFixHowm_DiaryFile = 'diary/%Y/%m/%Y-%m-%d-000000.howm'
 
+" マルチエンコーディングgrepを使用する
+let MyGrep_MultiEncoding = 1
