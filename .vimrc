@@ -165,7 +165,7 @@ let g:go_highlight_structs = 1
 "-----------------------------------
 "for VimFiler 
 "-----------------------------------
-nnoremap <F10> :VimFiler -split -simple -winwidth=50 -no-quit 
+nnoremap <F10> :VimFiler -split -simple -winwidth=40 -no-quit 
 nnoremap <F11> :UniteBookmarkAdd
 nnoremap <F12> :Unite bookmark
 
