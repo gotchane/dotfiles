@@ -126,7 +126,11 @@ set background=dark
  
 "カラースキームの設定
 colorscheme desert
- 
+
+"yamlの拡張子に変更
+autocmd BufRead,BufNewFile *.vm set filetype=yaml
+autocmd BufRead,BufNewFile *.template set filetype=yaml
+
 "-----------------------------------
 "for edit
 "-----------------------------------
