@@ -51,6 +51,9 @@ call dein#add('vim-jp/vim-go-extra')
 " vim-ft-goは最新版のvimを使えない場合のみ
 call dein#add('google/vim-ft-go')
 
+" velocity syntax for vim
+call dein#add('lepture/vim-velocity')
+
 call dein#end()
 
 filetype plugin indent on
@@ -128,7 +131,7 @@ set background=dark
 colorscheme desert
 
 "yamlの拡張子に変更
-autocmd BufRead,BufNewFile *.vm set filetype=yaml
+autocmd BufRead,BufNewFile *.vm set filetype=velocity
 autocmd BufRead,BufNewFile *.template set filetype=yaml
 
 "-----------------------------------
@@ -169,6 +172,7 @@ let g:go_highlight_structs = 1
 "-----------------------------------
 "for VimFiler 
 "-----------------------------------
+" ショートカットキー設定
 nnoremap <F10> :VimFiler -split -simple -winwidth=40 -no-quit 
 nnoremap <F11> :UniteBookmarkAdd
 nnoremap <F12> :Unite bookmark
@@ -178,6 +182,9 @@ nnoremap <Leader>e :silent ! start . <CR>
 
 " auto_cd有効
 let g:vimfiler_enable_auto_cd = 1
+
+" セーフモード無効状態で起動
+let g:vimfiler_safe_mode_by_default = 0
 
 "-----------------------------------
 "for vim-quickrun
