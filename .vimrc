@@ -186,6 +186,9 @@ let g:vimfiler_enable_auto_cd = 1
 " セーフモード無効状態で起動
 let g:vimfiler_safe_mode_by_default = 0
 
+" bookmark時の移動
+autocmd FileType vimfiler call unite#custom_default_action('directory', 'cd')
+
 "-----------------------------------
 "for vim-quickrun
 "-----------------------------------

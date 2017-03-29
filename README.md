@@ -2,7 +2,7 @@
 
 # Overview
 
-This is my configuration files
+This is my configuration files.
 
 # Features
 
