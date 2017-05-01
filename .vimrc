@@ -173,9 +173,9 @@ let g:go_highlight_structs = 1
 "for VimFiler 
 "-----------------------------------
 " ショートカットキー設定
-nnoremap <F10> :VimFiler -split -simple -winwidth=40 -no-quit 
-nnoremap <F11> :UniteBookmarkAdd
-nnoremap <F12> :Unite bookmark
+nnoremap <F6> :VimFiler -split -simple -winwidth=40 -no-quit 
+nnoremap <F7> :UniteBookmarkAdd
+nnoremap <F8> :Unite bookmark
 
 " 編集中ファイルをエクスプローラで開く
 nnoremap <Leader>e :silent ! start . <CR>
@@ -202,7 +202,7 @@ let g:quickrun_config['go.test'] = {'command' : 'go', 'exec' : ['%c test']}
 "-----------------------------------
 let g:tagbar_left = 0
 let g:tagbar_autofocus = 1
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 
 "-----------------------------------
 " QFixHowm

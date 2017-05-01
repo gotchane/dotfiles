@@ -3,3 +3,4 @@
 .vim/dein/*
 !/.vim/dein/repos/github.com/Shougo/dein.vim
 .vim/init.vim
+.vim/.netrwhist
