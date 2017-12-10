@@ -86,7 +86,7 @@ set hidden
 "set undodir=~/.vim/tmp
  
 "ヤンクをクリップボードにコピー
-set clipboard=unnamed,autoselect 
+set clipboard=unnamed
 
 "タブの設定
 set expandtab

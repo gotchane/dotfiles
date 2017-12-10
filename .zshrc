@@ -133,7 +133,7 @@ export LANG=ja_JP.UTF-8
 #export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 
 ##############################################
