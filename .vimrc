@@ -54,6 +54,9 @@ call dein#add('google/vim-ft-go')
 " velocity syntax for vim
 call dein#add('lepture/vim-velocity')
 
+" A 24bit colorscheme for Vim, Airline and Lightline
+call dein#add('jacoborus/tender')
+
 call dein#end()
 
 filetype plugin indent on
@@ -128,7 +131,7 @@ syntax on
 set background=dark
  
 "カラースキームの設定
-colorscheme desert
+colorscheme tender
 
 "yamlの拡張子に変更
 autocmd BufRead,BufNewFile *.vm set filetype=velocity
