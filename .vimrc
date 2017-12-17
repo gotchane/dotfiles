@@ -54,8 +54,11 @@ call dein#add('google/vim-ft-go')
 " velocity syntax for vim
 call dein#add('lepture/vim-velocity')
 
-" A 24bit colorscheme for Vim, Airline and Lightline
-call dein#add('jacoborus/tender')
+" Molokai color scheme for Vim
+call dein#add('tomasr/molokai')
+
+" A dark color scheme for Vim
+call dein#add('w0ng/vim-hybrid')
 
 call dein#end()
 
@@ -131,7 +134,7 @@ syntax on
 set background=dark
  
 "カラースキームの設定
-colorscheme tender
+colorscheme molokai
 
 "yamlの拡張子に変更
 autocmd BufRead,BufNewFile *.vm set filetype=velocity
