@@ -48,9 +48,6 @@ call dein#add('dgryski/vim-godef')
 " Extra plugin for golang
 call dein#add('vim-jp/vim-go-extra')
 
-" vim-ft-goは最新版のvimを使えない場合のみ
-call dein#add('google/vim-ft-go')
-
 " velocity syntax for vim
 call dein#add('lepture/vim-velocity')
 
@@ -59,6 +56,21 @@ call dein#add('tomasr/molokai')
 
 " A dark color scheme for Vim
 call dein#add('w0ng/vim-hybrid')
+
+" vim interface to Web API
+call dein#add('mattn/webapi-vim')
+
+" Vim plugin: A framework to read/write fake:path
+call dein#add('kana/vim-metarw')
+
+" This plugin provides some functions of Hatena-Blog by using AtomPub API.
+call dein#add('moznion/hateblo.vim')
+
+" Realtime preview by Vim. (Markdown, reStructuredText, textile)
+call dein#add('kannokanno/previm')
+
+" Open URI with your favorite browser from your most favorite editor
+call dein#add('tyru/open-browser.vim')
 
 call dein#end()
 
@@ -211,7 +223,7 @@ let g:tagbar_autofocus = 1
 nmap <F9> :TagbarToggle<CR>
 
 "-----------------------------------
-" QFixHowm
+" for QFixHowm
 "-----------------------------------
 
 "QFixHowmキーマップ
@@ -222,8 +234,18 @@ let howm_dir             = '~/note/memo'
 "howmファイル読込の際、howm_fileencodingに強制設定する
 let QFixHowm_ForceEncoding = 1
 let howm_fileformat      = 'unix'
-let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
 let QFixHowm_DiaryFile = 'diary/%Y/%m/%Y-%m-%d-000000.howm'
 
 " マルチエンコーディングgrepを使用する
 let MyGrep_MultiEncoding = 1
+
+
+"-----------------------------------
+" for previm
+"-----------------------------------
+let g:previm_open_cmd = 'open -a /Applications/Google\ Chrome.app'
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END

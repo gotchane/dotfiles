@@ -128,12 +128,14 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 ##############################################
 # 環境変数設定
 export LANG=ja_JP.UTF-8
-#export GOPATH=$HOME/go
-#export GOROOT=$( go env GOROOT )
-#export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#export PATH=$HOME/.nodebrew/current/bin:$PATH
+export GOPATH=$HOME/go
+export GOROOT=$( go env GOROOT )
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 eval "$(rbenv init -)"
+
+alias ctags="`brew --prefix`/bin/ctags"
 
 
 ##############################################
@@ -160,3 +162,5 @@ if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" && -z "$TMUX" && -z "$STY" ]] && type 
     fi
     tmux $option && confirm "exit?" && exit
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

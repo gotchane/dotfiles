@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 DOT_DIRECTORY="${HOME}/dotfiles"
-DOT_TARBALL="https://github.com/5010m/dotfiles/tarball/master"
-REMOTE_URL="https://github.com/5010m/dotfiles.git"
+DOT_TARBALL="https://github.com/gotchane/dotfiles/tarball/master"
+REMOTE_URL="https://github.com/gotchane/dotfiles.git"
 
 has() {
   type "$1" > /dev/null 2>&1
