@@ -130,6 +130,7 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
+export GOMYREPO=$GOPATH/src/github.com/gotchane
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
