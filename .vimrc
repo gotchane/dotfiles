@@ -72,6 +72,13 @@ call dein#add('kannokanno/previm')
 " Open URI with your favorite browser from your most favorite editor
 call dein#add('tyru/open-browser.vim')
 
+" Dark powered asynchronous completion framework for neovim/Vim8
+call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+
 call dein#end()
 
 filetype plugin indent on
@@ -249,3 +256,8 @@ augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
+
+"-----------------------------------
+" for deplete.nvim
+"-----------------------------------
+let g:deoplete#enable_at_startup = 1
