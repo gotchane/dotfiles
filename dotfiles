@@ -81,7 +81,6 @@ link_files() {
 
   # Creating nvim symlinks
   ln -snfv ${DOT_DIRECTORY}/.vim ${HOME}/.config/nvim
-  ln -snfv ${DOT_DIRECTORY}/.vimrc ${HOME}/.config/nvim/init.vim
 
   echo $(tput setaf 2)Deploy dotfiles complete! $(tput sgr0)
 }
@@ -89,33 +88,6 @@ link_files() {
 initialize() {
   echo initialize 
 }
-#  run_brew
-#
-#  [ ! -d ${HOME}/.zplug ] && git clone https://github.com/b4b4r07/zplug ${HOME}/.zplug
-#  [ ! -d ${HOME}/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
-#
-#  if has "nodebrew"; then
-#    # Install latest node
-#    current=`nodebrew ls | tail -n 1 | cut -d' ' -f 2`
-#    if [ ${current} = "none"  ]; then
-#      curl -sL git.io/nodebrew | perl - setup
-#      nodebrew install-binary latest
-#      nodebrew use latest
-#    fi
-#  fi
-#  if has "rbenv"; then
-#    # Install latest ruby
-#    latest=`rbenv install --list | grep -v - | tail -n 1`
-#    current=`rbenv versions | tail -n 1 | grep -oe '\d\.\d\.\d'`
-#    if [ ${current} != ${latest} ]; then
-#      rbenv install ${latest}
-#      rbenv global ${latest}
-#    fi
-#  fi
-#
-#  [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
-#  echo "$(tput setaf 2)Initialize complete! $(tput sgr0)"
-#}
 
 command=$1
 [ $# -gt 0 ] && shift
