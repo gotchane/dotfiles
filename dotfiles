@@ -82,7 +82,12 @@ link_files() {
   # Creating nvim symlinks
   ln -snfv ${DOT_DIRECTORY}/.vim ${HOME}/.config/nvim
 
-  echo $(tput setaf 2)Deploy dotfiles complete! $(tput sgr0)
+  echo $(tput setaf 2)Link dotfiles symlinks complete! $(tput sgr0)
+}
+
+set_git_submodule() {
+  git submodule init && git submodule update
+  echo $(tput setaf 2)Update git submodules complete! $(tput sgr0)
 }
 
 initialize() {
@@ -95,6 +100,7 @@ command=$1
 case $command in
   deploy)
     link_files
+    set_git_submodule
     ;;
   init*)
     initialize
