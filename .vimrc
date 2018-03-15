@@ -80,6 +80,11 @@ if !has('nvim')
 endif
 
 call dein#end()
+call dein#save_state()
+
+if dein#check_install()
+  call dein#install()
+endif
 
 filetype plugin indent on
 
