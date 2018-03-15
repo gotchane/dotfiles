@@ -1,12 +1,6 @@
 #!/bin/bash
 set -e
 DOT_DIRECTORY="${HOME}/dotfiles"
-DOT_TARBALL="https://github.com/gotchane/dotfiles/tarball/master"
-REMOTE_URL="https://github.com/gotchane/dotfiles.git"
-
-has() {
-  type "$1" > /dev/null 2>&1
-}
 
 usage() {
   name=`basename $0`
@@ -15,7 +9,6 @@ Usage:
   $name [arguments] [command]
 Commands:
   deploy
-  initialize
 Arguments:
   -f $(tput setaf 1)** warning **$(tput sgr0) Overwrite dotfiles.
   -h Print help (this message)
@@ -47,26 +40,7 @@ case ${OSTYPE} in
     ;;
 esac
 
-# If missing, download and extract the dotfiles repository
-if [ ! -d ${DOT_DIRECTORY} ]; then
-  echo "Downloading dotfiles..."
-  mkdir ${DOT_DIRECTORY}
-
-  if has "git"; then
-    git clone --recursive "${REMOTE_URL}" "${DOT_DIRECTORY}"
-  else
-    curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOT_TARBALL}
-    tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOT_DIRECTORY}
-    rm -f ${HOME}/dotfiles.tar.gz
-  fi
-
-  echo $(tput setaf 2)Download dotfiles complete!. $(tput sgr0)
-fi
-
-cd ${DOT_DIRECTORY}
-#source ./lib/brew
-
-link_files() {
+set_symlinks() {
   for f in .??*
   do
     # Force remove the vim directory if it's already there
@@ -90,20 +64,13 @@ set_git_submodule() {
   echo $(tput setaf 2)Update git submodules complete! $(tput sgr0)
 }
 
-initialize() {
-  echo initialize 
-}
-
 command=$1
 [ $# -gt 0 ] && shift
 
 case $command in
   deploy)
-    link_files
+    set_symlinks
     set_git_submodule
-    ;;
-  init*)
-    initialize
     ;;
   *)
     usage
@@ -111,4 +78,3 @@ case $command in
 esac
 
 exit 0
-
