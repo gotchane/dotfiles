@@ -28,7 +28,7 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimfiler')
 
 " Interactive command execution in Vim
-call dein#add('Shougo/vimproc')
+call dein#add('Shougo/vimproc', {'build': 'make'})
 
 " Next generation completion framework after neocomplcache.
 call dein#add('Shougo/neocomplete')
