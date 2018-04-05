@@ -138,4 +138,4 @@ export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
 
 alias ctags="`brew --prefix`/bin/ctags"
-alias codegrep="find . -type f -print0 | xargs -0 grep -n -E $1"
+alias codegrep="find . -path ./.git -prune -o -path ./log -prune -o -type f -print0 | xargs -0 grep -n -E $1"
