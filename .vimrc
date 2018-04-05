@@ -72,6 +72,9 @@ call dein#add('kannokanno/previm')
 " Open URI with your favorite browser from your most favorite editor
 call dein#add('tyru/open-browser.vim')
 
+" CoffeeScript support for vim
+call dein#add('kchmck/vim-coffee-script')
+
 " Dark powered asynchronous completion framework for neovim/Vim8
 call dein#add('Shougo/deoplete.nvim')
 if !has('nvim')
