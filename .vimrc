@@ -75,6 +75,9 @@ call dein#add('tyru/open-browser.vim')
 " CoffeeScript support for vim
 call dein#add('kchmck/vim-coffee-script')
 
+" Ease your git workflow within Vim
+call dein#add('jreybert/vimagit')
+
 " Dark powered asynchronous completion framework for neovim/Vim8
 call dein#add('Shougo/deoplete.nvim')
 if !has('nvim')
