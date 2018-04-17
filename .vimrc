@@ -78,6 +78,9 @@ call dein#add('kchmck/vim-coffee-script')
 " Ease your git workflow within Vim
 call dein#add('jreybert/vimagit')
 
+" Vim plugin for the Perl module / CLI script 'ack'
+call dein#add('mileszs/ack.vim')
+
 " Dark powered asynchronous completion framework for neovim/Vim8
 call dein#add('Shougo/deoplete.nvim')
 if !has('nvim')
@@ -272,3 +275,8 @@ augroup END
 " for deplete.nvim
 "-----------------------------------
 let g:deoplete#enable_at_startup = 1
+
+"-----------------------------------
+" for ack.vim
+"-----------------------------------
+let g:ackprg = 'ag --nogroup --nocolor --column'
