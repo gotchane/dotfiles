@@ -126,7 +126,6 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 ##############################################
 # Env settings
 ##############################################
-# 環境変数設定
 export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
@@ -137,5 +136,12 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
 
-alias ctags="`brew --prefix`/bin/ctags"
-alias codegrep="find . -path ./.git -prune -o -path ./log -prune -o -type f -print0 | xargs -0 grep -n -E $1"
+
+##############################################
+# Alias settings
+##############################################
+alias ctags='`brew --prefix`/bin/ctags'
+alias codegrep='find . -path ./.git -prune -o -path ./log -prune -o -type f -print0 | xargs -0 grep -n -E $1'
+alias g='cd $(ghq root)/$(ghq list | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+alias ap='ansible-playbook $(ghq root)/github.com/gotchane/mac-ansible/playbooks/macosx.yml'
