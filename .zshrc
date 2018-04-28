@@ -145,3 +145,14 @@ alias codegrep='find . -path ./.git -prune -o -path ./log -prune -o -type f -pri
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias ap='ansible-playbook $(ghq root)/github.com/gotchane/mac-ansible/playbooks/macosx.yml'
+
+##############################################
+# Function settings
+##############################################
+function al() {
+  curl $1 -sL | xmllint --html --xpath 2>/dev/null "//head/title" - | sed -e "s;<title>;<a href=\"${1//&/\&}\" target=\"_blank\" rel=\"nofollow noopener\">;g" -e "s;</title>;</a>;g" | pbcopy ; pbpaste
+}
+
+function ml() {
+  curl $1 -sL | xmllint --html --xpath 2>/dev/null "//head/title" - | sed -e "s;<title>;\[;g" -e "s;</title>;\]\(${1//&/\&}\);g" | pbcopy ; pbpaste
+}
