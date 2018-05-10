@@ -220,7 +220,7 @@ nnoremap <F8> :Unite bookmark
 nnoremap <Leader>e :silent ! start . <CR>
 
 " auto_cd有効
-let g:vimfiler_enable_auto_cd = 1
+let g:vimfiler_enable_auto_cd = 0
 
 " セーフモード無効状態で起動
 let g:vimfiler_safe_mode_by_default = 0
