@@ -136,7 +136,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
 
-
 ##############################################
 # Alias settings
 ##############################################
@@ -145,6 +144,7 @@ alias codegrep='find . -path ./.git -prune -o -path ./log -prune -o -type f -pri
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias ap='ansible-playbook $(ghq root)/github.com/gotchane/mac-ansible/playbooks/macosx.yml'
+alias ssh='~/dotfiles/scripts/ssh-change-bg'
 
 ##############################################
 # Function settings
