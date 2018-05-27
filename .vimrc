@@ -83,6 +83,10 @@ call dein#add('mileszs/ack.vim')
 
 " Dark powered asynchronous completion framework for neovim/Vim8
 call dein#add('Shougo/deoplete.nvim')
+
+" Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
+call dein#add('ctrlpvim/ctrlp.vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -280,3 +284,8 @@ let g:deoplete#enable_at_startup = 1
 " for ack.vim
 "-----------------------------------
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"-----------------------------------
+" for ctrlp.vim
+"-----------------------------------
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
