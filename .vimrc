@@ -84,6 +84,9 @@ call dein#add('mileszs/ack.vim')
 " Dark powered asynchronous completion framework for neovim/Vim8
 call dein#add('Shougo/deoplete.nvim')
 
+" Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
+call dein#add('ctrlpvim/ctrlp.vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -190,6 +193,8 @@ nmap <C-o><C-o> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
 " 選択した部分を検索
 vnoremap * "zy:let @/ = @z<CR>n
 
+" あいまい検索
+nnoremap <C-k> :vs **/*
 
 "-----------------------------------
 "for vimproc
