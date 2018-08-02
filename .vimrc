@@ -87,6 +87,9 @@ call dein#add('Shougo/deoplete.nvim')
 " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
 call dein#add('ctrlpvim/ctrlp.vim')
 
+" Perform the replacement in quickfix.
+call dein#add('thinca/vim-qfreplace')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
