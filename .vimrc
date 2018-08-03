@@ -90,6 +90,12 @@ call dein#add('ctrlpvim/ctrlp.vim')
 " Perform the replacement in quickfix.
 call dein#add('thinca/vim-qfreplace')
 
+" endwise.vim: wisely add end in ruby, endfunction/endif/more in vim script, etc
+call dein#add('tpope/vim-endwise')
+
+" An extensible & universal comment vim-plugin that also handles embedded filetypes
+call dein#add('tomtom/tcomment_vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
