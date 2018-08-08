@@ -294,7 +294,7 @@ let g:deoplete#enable_at_startup = 1
 "-----------------------------------
 " for ack.vim
 "-----------------------------------
-let g:ackprg = 'rg --vimgrep --no-heading'
+let g:ackprg = 'rg --vimgrep --no-heading --no-ignore-messages'
 
 "-----------------------------------
 " for ctrlp.vim
