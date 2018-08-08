@@ -294,7 +294,7 @@ let g:deoplete#enable_at_startup = 1
 "-----------------------------------
 " for ack.vim
 "-----------------------------------
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 "-----------------------------------
 " for ctrlp.vim
