@@ -294,9 +294,15 @@ let g:deoplete#enable_at_startup = 1
 "-----------------------------------
 " for ack.vim
 "-----------------------------------
-let g:ackprg = 'rg --vimgrep --no-heading --no-ignore-messages'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --no-heading --no-ignore-messages'
+endif
 
 "-----------------------------------
 " for ctrlp.vim
 "-----------------------------------
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+if executable('rg')
+  let g:ctrlp_user_command = 'rg --files %s'
+  let g:ctrlp_use_caching = 0
+endif
