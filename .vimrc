@@ -54,8 +54,8 @@ call dein#add('lepture/vim-velocity')
 " Molokai color scheme for Vim
 call dein#add('tomasr/molokai')
 
-" The colorscheme featuring Japanese traditional colors.
-call dein#add('aereal/vim-colors-japanesque')
+" A vim theme inspired by Atom's default dark theme
+call dein#add('gosukiwi/vim-atom-dark')
 
 " A dark color scheme for Vim
 call dein#add('w0ng/vim-hybrid')
@@ -183,7 +183,7 @@ syntax on
 set background=dark
  
 "カラースキームの設定
-colorscheme japanesque
+colorscheme atom-dark
 
 "yamlの拡張子に変更
 autocmd BufRead,BufNewFile *.vm set filetype=velocity
