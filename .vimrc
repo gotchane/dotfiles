@@ -57,6 +57,9 @@ call dein#add('tomasr/molokai')
 " A vim theme inspired by Atom's default dark theme
 call dein#add('gosukiwi/vim-atom-dark')
 
+" A dark colorscheme for space-vim that supports GUI and terminal
+call dein#add('liuchengxu/space-vim-dark')
+
 " A dark color scheme for Vim
 call dein#add('w0ng/vim-hybrid')
 
