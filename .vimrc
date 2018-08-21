@@ -60,6 +60,9 @@ call dein#add('gosukiwi/vim-atom-dark')
 " A dark colorscheme for space-vim that supports GUI and terminal
 call dein#add('liuchengxu/space-vim-dark')
 
+" The colorscheme featuring Japanese traditional colors.
+call dein#add('aereal/vim-colors-japanesque')
+
 " A dark color scheme for Vim
 call dein#add('w0ng/vim-hybrid')
 
@@ -183,8 +186,13 @@ endfunction
 syntax on
  
 "背景の明暗
-set background=dark
- 
+"set background=dark
+
+" TrueColor 設定
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 "カラースキームの設定
 colorscheme atom-dark
 
