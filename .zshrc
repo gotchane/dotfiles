@@ -141,11 +141,18 @@ eval "$(rbenv init -)"
 ##############################################
 alias ctags='`brew --prefix`/bin/ctags'
 alias codegrep='find . -path ./.git -prune -o -path ./log -prune -o -type f -print0 | xargs -0 grep -n -E $1'
-alias g='cd $(ghq root)/$(ghq list | peco)'
+alias G='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias ap='ansible-playbook $(ghq root)/github.com/gotchane/mac-ansible/playbooks/macosx.yml'
 alias ssh='~/dotfiles/scripts/ssh-change-bg'
 alias be='bundle exec'
+
+##############################################
+# Git alias settings
+##############################################
+alias g='git'
+alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'
 
 ##############################################
 # Function settings
