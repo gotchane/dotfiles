@@ -57,8 +57,11 @@ call dein#add('tomasr/molokai')
 " A vim theme inspired by Atom's default dark theme
 call dein#add('gosukiwi/vim-atom-dark')
 
-" A dark colorscheme for space-vim that supports GUI and terminal
-call dein#add('liuchengxu/space-vim-dark')
+" A vim theme inspired by Atom's default dark theme
+call dein#add('gosukiwi/vim-atom-dark')
+
+" A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
+call dein#add('joshdick/onedark.vim')
 
 " The colorscheme featuring Japanese traditional colors.
 call dein#add('aereal/vim-colors-japanesque')
@@ -194,7 +197,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 "カラースキームの設定
-colorscheme atom-dark
+colorscheme onedark
 
 "yamlの拡張子に変更
 autocmd BufRead,BufNewFile *.vm set filetype=velocity
