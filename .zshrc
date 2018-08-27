@@ -133,6 +133,7 @@ export GOMYREPO=$GOPATH/src/github.com/gotchane
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
 
