@@ -166,3 +166,7 @@ function al() {
 function ml() {
   curl $1 -sL | xmllint --html --xpath 2>/dev/null "//head/title" - | sed -e "s;<title>;\[;g" -e "s;</title>;\]\(${1//&/\&}\);g" | pbcopy ; pbpaste
 }
+
+function sl() {
+  echo -e "$@" | slackcat --stream
+}

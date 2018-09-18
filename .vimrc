@@ -108,6 +108,9 @@ call dein#add('tpope/vim-endwise')
 " An extensible & universal comment vim-plugin that also handles embedded filetypes
 call dein#add('tomtom/tcomment_vim')
 
+" Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
+call dein#add('w0rp/ale')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -323,3 +326,9 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg --files %s'
   let g:ctrlp_use_caching = 0
 endif
+
+"-----------------------------------
+" for ale
+"-----------------------------------
+let g:ale_linters = {'javascript': ['eslint'],}
+let g:ale_linters_explicit = 1
