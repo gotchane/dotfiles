@@ -170,3 +170,11 @@ function ml() {
 function sl() {
   echo -e "$@" | slackcat --stream
 }
+
+##############################################
+# load env settings
+##############################################
+GITHUB_CREDENTIAL_FILE=~/.github_credentials
+if [ -e $GITHUB_CREDENTIAL_FILE ]; then
+  source $GITHUB_CREDENTIAL_FILE
+fi
