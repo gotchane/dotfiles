@@ -111,6 +111,9 @@ call dein#add('tomtom/tcomment_vim')
 " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 call dein#add('w0rp/ale')
 
+" Automatically save changes to disk
+call dein#add('vim-scripts/vim-auto-save')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -332,3 +335,10 @@ endif
 "-----------------------------------
 let g:ale_linters = {'javascript': ['eslint'],}
 let g:ale_linters_explicit = 1
+
+"-----------------------------------
+" for AutoSave
+"-----------------------------------
+let g:auto_save = 1 
+let g:auto_save_no_updatetime = 1
+let g:auto_save_in_insert_mode = 0
