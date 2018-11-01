@@ -220,13 +220,10 @@ autocmd BufRead,BufNewFile *.template set filetype=yaml
 set backspace=indent,eol,start      
  
 " 現在日時を入力
-nmap <C-o><C-o> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
+nmap <C-k><C-k> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
 
 " 選択した部分を検索
 vnoremap * "zy:let @/ = @z<CR>n
-
-" あいまい検索
-nnoremap <C-k> :vs **/*
 
 "-----------------------------------
 "for vimproc
