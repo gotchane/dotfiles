@@ -114,6 +114,18 @@ call dein#add('w0rp/ale')
 " Automatically save changes to disk
 call dein#add('vim-scripts/vim-auto-save')
 
+" Vim/Ruby Configuration Files
+call dein#add('vim-ruby/vim-ruby')
+
+" rails.vim: Ruby on Rails power tools
+call dein#add('tpope/vim-rails')
+
+" rbenv.vim: Minimal rbenv support
+call dein#add('tpope/vim-rbenv')
+
+" bundler.vim: Lightweight support for Ruby's Bundler
+call dein#add('tpope/vim-bundler')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -337,3 +349,10 @@ let g:ale_linters_explicit = 1
 " for AutoSave
 "-----------------------------------
 let g:auto_save = 1 
+let g:auto_save_presave_hook = 'call AbortGitCommit()'
+
+function! AbortIfGitCommit()
+  if &filetype == 'gitcommit'
+    let g:auto_save_abort = 1
+  endif
+endfunction
