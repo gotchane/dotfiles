@@ -349,10 +349,3 @@ let g:ale_linters_explicit = 1
 " for AutoSave
 "-----------------------------------
 let g:auto_save = 1 
-let g:auto_save_presave_hook = 'call AbortGitCommit()'
-
-function! AbortIfGitCommit()
-  if &filetype == 'gitcommit'
-    let g:auto_save_abort = 1
-  endif
-endfunction
