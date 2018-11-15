@@ -126,6 +126,15 @@ call dein#add('tpope/vim-rbenv')
 " bundler.vim: Lightweight support for Ruby's Bundler
 call dein#add('tpope/vim-bundler')
 
+" A Vim plugin for visually displaying indent levels in code
+call dein#add('nathanaelkane/vim-indent-guides')
+
+" neo-snippet plugin
+call dein#add('Shougo/neosnippet.vim')
+
+" The standard snippets repository for neosnippet
+call dein#add('gotchane/neosnippet-snippets')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -198,6 +207,8 @@ function! Getff()
     endif
 endfunction
 
+" tags path
+set tags+=.git/tags
 
 "-----------------------------------
 "for view 
@@ -232,7 +243,7 @@ autocmd BufRead,BufNewFile *.template set filetype=yaml
 set backspace=indent,eol,start      
  
 " 現在日時を入力
-nmap <C-k><C-k> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
+nmap <C-h><C-h> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
 
 " 選択した部分を検索
 vnoremap * "zy:let @/ = @z<CR>n
@@ -346,6 +357,44 @@ let g:ale_linters = {'javascript': ['eslint'],}
 let g:ale_linters_explicit = 1
 
 "-----------------------------------
+" for vim-rails
+"-----------------------------------
+let g:rails_ctags_arguments = ['--languages=Ruby --tag-relative --recurse --sort=yes  --append=no -f .git/tags']
+
+"-----------------------------------
 " for AutoSave
 "-----------------------------------
-let g:auto_save = 1 
+if expand("%:p") =~ 'COMMIT_EDITMSG'
+  let g:auto_save = 0
+else
+  let g:auto_save = 1
+endif
+let g:auto_save_events = ["InsertLeave"]
+
+"-----------------------------------
+" for vim-indent-guides
+"-----------------------------------
+let g:indent_guides_enable_on_vim_startup = 1
+
+"-----------------------------------
+" for neosnippet
+"-----------------------------------
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
