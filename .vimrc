@@ -135,6 +135,12 @@ call dein#add('Shougo/neosnippet.vim')
 " The standard snippets repository for neosnippet
 call dein#add('gotchane/neosnippet-snippets')
 
+" Syntax Highlight for Vue.js components
+call dein#add('posva/vim-vue')
+
+" surround.vim: quoting/parenthesizing made simple
+call dein#add('tpope/vim-surround')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -381,6 +387,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 "-----------------------------------
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+let g:neosnippet#scope_aliases = {}
+let g:neosnippet#scope_aliases['javascript'] = 'html,javascript'
+
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
