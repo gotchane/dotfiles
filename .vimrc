@@ -57,9 +57,6 @@ call dein#add('tomasr/molokai')
 " A vim theme inspired by Atom's default dark theme
 call dein#add('gosukiwi/vim-atom-dark')
 
-" A vim theme inspired by Atom's default dark theme
-call dein#add('gosukiwi/vim-atom-dark')
-
 " A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
 call dein#add('joshdick/onedark.vim')
 
@@ -141,6 +138,12 @@ call dein#add('posva/vim-vue')
 " surround.vim: quoting/parenthesizing made simple
 call dein#add('tpope/vim-surround')
 
+" Run Rspec specs from Vim
+call dein#add('thoughtbot/vim-rspec')
+
+" dispatch.vim: Asynchronous build and test dispatcher
+call dein#add('tpope/vim-dispatch')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -215,6 +218,8 @@ endfunction
 
 " tags path
 set tags+=.git/tags
+
+set nocursorline
 
 "-----------------------------------
 "for view 
@@ -407,3 +412,18 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+"-----------------------------------
+" for vim-surround
+"-----------------------------------
+nmap ff <Plug>Csurround"'
+nmap tt <Plug>Csurround'"
+
+"-----------------------------------
+" for vim-rspec
+"-----------------------------------
+let g:rspec_command = "Dispatch bin/rspec {spec}"
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
