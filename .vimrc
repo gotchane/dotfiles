@@ -105,9 +105,6 @@ call dein#add('tpope/vim-endwise')
 " An extensible & universal comment vim-plugin that also handles embedded filetypes
 call dein#add('tomtom/tcomment_vim')
 
-" Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
-call dein#add('w0rp/ale')
-
 " Automatically save changes to disk
 call dein#add('vim-scripts/vim-auto-save')
 
@@ -143,6 +140,9 @@ call dein#add('thoughtbot/vim-rspec')
 
 " dispatch.vim: Asynchronous build and test dispatcher
 call dein#add('tpope/vim-dispatch')
+
+" killring-alike plugin for neovim and vim 8 with no default mappings
+call dein#add('bfredl/nvim-miniyank')
 
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
@@ -427,3 +427,9 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+"-----------------------------------
+" for nvim-miniyank
+"-----------------------------------
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
