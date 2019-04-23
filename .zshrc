@@ -173,6 +173,13 @@ function sl() {
   echo -e "$@" | slackcat --stream
 }
 
+function tp() {
+  dir="cd $(ghq root)/$(ghq list | peco)"
+  for _pane in $(tmux list-panes -a -F '#{pane_id}'); do
+    tmux send-keys -t ${_pane} $dir C-m
+  done
+}
+
 ##############################################
 # load env settings
 ##############################################
