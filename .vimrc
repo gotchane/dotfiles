@@ -144,6 +144,9 @@ call dein#add('tpope/vim-dispatch')
 " killring-alike plugin for neovim and vim 8 with no default mappings
 call dein#add('bfredl/nvim-miniyank')
 
+" keep and restore fcitx state when leaving/re-entering insert mode
+call dein#add('vim-scripts/fcitx.vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
