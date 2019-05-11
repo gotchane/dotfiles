@@ -144,6 +144,9 @@ call dein#add('tpope/vim-dispatch')
 " killring-alike plugin for neovim and vim 8 with no default mappings
 call dein#add('bfredl/nvim-miniyank')
 
+" Unobtrusive scratch window
+call dein#add('mtth/scratch.vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -433,3 +436,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 "-----------------------------------
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
+
+"-----------------------------------
+" for vim-scratch
+"-----------------------------------
+let g:scratch_filetype = 'ruby'
