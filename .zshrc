@@ -82,6 +82,10 @@ linux*)
     ;;
 esac
 
+##############################################
+## Prompt settings
+###############################################
+
 #ファイル補完候補に色を付ける
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
@@ -99,19 +103,6 @@ if [ ${UID} -eq 0 ]; then
   tmp_sprompt="%B%U${tmp_sprompt}%u%b"
 fi
 
-# 通常のプロンプト
-PROMPT=$tmp_prompt
-# セカンダリのプロンプト(コマンドが2行以上の時に表示される)
-PROMPT2=$tmp_prompt2
-
-# 右側のプロンプト
-RPROMPT=$tmp_rprompt
-
-# スペル訂正用プロンプト
-SPROMPT=$tmp_sprompt
-
-# git設定
-RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -120,8 +111,20 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
+# style of parrot os
+PROMPT=$'%{$fg[red]%}┌[%{$fg_bold[brown]%}%n%{$reset_color%}%{$fg[yellow]%}@%{$fg_bold[blue]%}%m%{$reset_color%}%{$fg[red]%}][%{$fg[green]%}%~%{$reset_color%}%{$fg[red]%}]${vcs_info_msg_0_}
+%{$fg[red]%}└──╼%{$fg_bold[yellow]%}$%{$reset_color%} '
+PS2=$' %{$fg[green]%}|>%{$reset_color%} '
+
+# セカンダリのプロンプト(コマンドが2行以上の時に表示される)
+PROMPT2=$tmp_prompt2
+
+# 右側のプロンプト
+RPROMPT=''
+
+# スペル訂正用プロンプト
+SPROMPT=$tmp_sprompt
 
 ##############################################
 # Env settings

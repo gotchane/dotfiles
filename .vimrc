@@ -147,6 +147,9 @@ call dein#add('bfredl/nvim-miniyank')
 " Unobtrusive scratch window
 call dein#add('mtth/scratch.vim')
 
+" keep and restore fcitx state when leaving/re-entering insert mode
+call dein#add('vim-scripts/fcitx.vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
