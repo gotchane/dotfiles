@@ -443,4 +443,6 @@ map P <Plug>(miniyank-autoPut)
 "-----------------------------------
 " for vim-scratch
 "-----------------------------------
-let g:scratch_filetype = 'ruby'
+let g:scratch_filetype = 'markdown'
+let g:scratch_autohide = 0
+let g:scratch_height = 10
