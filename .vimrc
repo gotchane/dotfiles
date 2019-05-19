@@ -228,6 +228,12 @@ set tags+=.git/tags
 set nocursorline
 
 "-----------------------------------
+"for vimrc
+"-----------------------------------
+nnoremap <Leader>e :e ~/.vimrc<CR>
+nnoremap <Leader>1 :source ~/.vimrc<CR>
+
+"-----------------------------------
 "for view 
 "-----------------------------------
  
@@ -292,7 +298,7 @@ nnoremap <F7> :UniteBookmarkAdd
 nnoremap <F8> :Unite bookmark
 
 " 編集中ファイルをエクスプローラで開く
-nnoremap <Leader>e :silent ! start . <CR>
+nnoremap <Leader>d :silent ! start . <CR>
 
 " auto_cd有効
 let g:vimfiler_enable_auto_cd = 0
@@ -357,6 +363,9 @@ let g:deoplete#enable_at_startup = 1
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading --no-ignore-messages'
 endif
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>g :Ack!<Space>
 
 "-----------------------------------
 " for ctrlp.vim
