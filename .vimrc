@@ -150,6 +150,12 @@ call dein#add('mtth/scratch.vim')
 " keep and restore fcitx state when leaving/re-entering insert mode
 call dein#add('vim-scripts/fcitx.vim')
 
+" A unite.vim plugin
+call dein#add('ujihisa/unite-colorscheme')
+
+" True Sublime Text style multiple selections for Vim
+call dein#add('terryma/vim-multiple-cursors')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')

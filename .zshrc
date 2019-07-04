@@ -152,6 +152,7 @@ alias ssh='~/dotfiles/scripts/ssh-change-bg'
 alias be='bundle exec'
 alias pb='curl -sH "Authorization: token ${GITHUB_API_TOKEN}" "https://api.github.com/repos/$(ghq list | sed s#github.com\/##g | peco)/pulls" | jq ".[] | { number: .number, title: .title, base: .base.ref, head: .head.ref }"'
 alias tmuxg='tmux new-session \; source-file ~/.tmux.session.conf'
+alias gad='git commit --amend --date "`date -R`"'
 
 ##############################################
 # Git alias settings
