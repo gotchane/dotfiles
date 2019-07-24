@@ -277,6 +277,21 @@ nmap <C-h><C-h> <ESC>a<C-r>=strftime("%Y%m%d_")<CR>
 " 選択した部分を検索
 vnoremap * "zy:let @/ = @z<CR>n
 
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" Move window
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+
+" Move window
+nmap st :tabnew<CR>
+nmap sn gt
+nmap sp gT
+
 "-----------------------------------
 "for vimproc
 "-----------------------------------
@@ -371,7 +386,7 @@ if executable('rg')
 endif
 
 cnoreabbrev Ack Ack!
-nnoremap <Leader>g :Ack!<Space>
+vnoremap <Leader>g y:Ack! <C-r>=fnameescape(@")<CR><CR>
 
 "-----------------------------------
 " for ctrlp.vim
