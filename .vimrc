@@ -304,7 +304,9 @@ let g:vimproc#download_windows_dll = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_fmt_autosave = 0
 nnoremap mg :GoRun <CR>
+nnoremap mf :GoFmt <CR>
 
 "-----------------------------------
 "for Neocomplete 
