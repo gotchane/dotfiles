@@ -314,9 +314,10 @@ let g:go_highlight_structs = 1
 "for VimFiler 
 "-----------------------------------
 " ショートカットキー設定
-nnoremap <F6> :VimFiler -split -simple -winwidth=40 -no-quit 
+nnoremap <F6> :VimFiler -split -simple -winwidth=40 -no-quit
 nnoremap <F7> :UniteBookmarkAdd
 nnoremap <F8> :Unite bookmark
+nnoremap mq :VimFilerClose default
 
 " 編集中ファイルをエクスプローラで開く
 nnoremap <Leader>d :silent ! start . <CR>
