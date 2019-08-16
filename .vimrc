@@ -156,6 +156,9 @@ call dein#add('ujihisa/unite-colorscheme')
 " True Sublime Text style multiple selections for Vim
 call dein#add('terryma/vim-multiple-cursors')
 
+" Auto close parentheses and repeat by dot dot dot...
+call dein#add('cohama/lexima.vim')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -198,7 +201,8 @@ set hidden
 "set undodir=~/.vim/tmp
  
 "ヤンクをクリップボードにコピー
-set clipboard=unnamed
+"set clipboard^=unnamed,unnamedplus
+set clipboard+=unnamedplus
 
 "タブの設定
 set expandtab
