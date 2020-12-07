@@ -137,6 +137,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH=$HOME/.nodenv/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
