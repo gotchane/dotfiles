@@ -321,7 +321,7 @@ nnoremap mf :GoFmt <CR>
 "for VimFiler 
 "-----------------------------------
 " ショートカットキー設定
-nnoremap <F6> :VimFiler -split -simple -winwidth=40 -no-quit
+nnoremap <C-l> :VimFiler -split -simple -winwidth=40 -no-quit
 nnoremap <F7> :UniteBookmarkAdd
 nnoremap <F8> :Unite bookmark
 nnoremap mq :VimFilerClose default
