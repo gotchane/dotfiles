@@ -139,6 +139,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 
 ##############################################
 # Alias settings
