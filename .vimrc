@@ -159,6 +159,9 @@ call dein#add('terryma/vim-multiple-cursors')
 " Auto close parentheses and repeat by dot dot dot...
 call dein#add('cohama/lexima.vim')
 
+" Support adding git commit prefix
+call dein#add('gotchane/vim-git-commit-prefix')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
