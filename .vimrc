@@ -325,6 +325,7 @@ nnoremap <C-l> :VimFiler -split -simple -winwidth=40 -no-quit
 nnoremap <F7> :UniteBookmarkAdd
 nnoremap <F8> :Unite bookmark
 nnoremap mq :VimFilerClose default
+nnoremap ls :Scratch <CR>
 
 " 編集中ファイルをエクスプローラで開く
 nnoremap <Leader>d :silent ! start . <CR>
