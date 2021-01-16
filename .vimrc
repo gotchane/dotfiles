@@ -160,7 +160,10 @@ call dein#add('terryma/vim-multiple-cursors')
 call dein#add('cohama/lexima.vim')
 
 " Support adding git commit prefix
-call dein#add('gotchane/vim-git-commit-prefix')
+call dein#add('KosukeMizuno/vim-git-commit-prefix')
+
+" TabNine For Vim
+call dein#add('codota/tabnine-vim')
 
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
@@ -488,3 +491,5 @@ map P <Plug>(miniyank-autoPut)
 let g:scratch_filetype = 'markdown'
 let g:scratch_autohide = 0
 let g:scratch_height = 10
+
+let g:git_commit_prefix_lang = 'en'
