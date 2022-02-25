@@ -163,7 +163,7 @@ call dein#add('cohama/lexima.vim')
 call dein#add('KosukeMizuno/vim-git-commit-prefix')
 
 " TabNine For Vim
-call dein#add('codota/tabnine-vim')
+" call dein#add('codota/tabnine-vim')
 
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
@@ -377,7 +377,6 @@ let QFixHowm_DiaryFile = 'diary/%Y/%m/%Y-%m-%d-000000.howm'
 
 " マルチエンコーディングgrepを使用する
 let MyGrep_MultiEncoding = 1
-
 
 "-----------------------------------
 " for previm

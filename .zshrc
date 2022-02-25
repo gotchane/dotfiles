@@ -135,9 +135,9 @@ export GOROOT=$( go env GOROOT )
 export GOMYREPO=$GOPATH/src/github.com/gotchane
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$HOME/.nodenv/bin:$PATH
+PATH=/opt/homebrew/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
@@ -148,6 +148,7 @@ eval "$(nodenv init -)"
 alias ctags='`brew --prefix`/bin/ctags'
 alias codegrep='find . -path ./.git -prune -o -path ./log -prune -o -type f -print0 | xargs -0 grep -n -E $1'
 alias G='cd $(ghq root)/$(ghq list | peco)'
+alias C='code $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias ap='ansible-playbook $(ghq root)/github.com/gotchane/mac-ansible/playbooks/macosx.yml'
 alias ssh='~/dotfiles/scripts/ssh-change-bg'
@@ -194,3 +195,7 @@ GITHUB_CREDENTIAL_FILE=~/.github_credentials
 if [ -e $GITHUB_CREDENTIAL_FILE ]; then
   source $GITHUB_CREDENTIAL_FILE
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
