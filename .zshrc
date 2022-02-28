@@ -178,7 +178,7 @@ function ml() {
 }
 
 function sl() {
-  echo -e "$@" | slackcat --stream
+  echo -e "$@" | slackcat --channel daily --stream
 }
 
 function tp() {

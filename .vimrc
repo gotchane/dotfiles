@@ -164,9 +164,6 @@ call dein#add('KosukeMizuno/vim-git-commit-prefix')
 
 " TabNine For Vim
 " call dein#add('codota/tabnine-vim')
-"
-" A git blame plugin for (neo)vim inspired by VS Code's GitLens plugin.
-call dein#add('APZelos/blamer.nvim')
 
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
