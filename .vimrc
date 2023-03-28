@@ -96,6 +96,9 @@ call dein#add('Shougo/deoplete.nvim')
 " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
 call dein#add('ctrlpvim/ctrlp.vim')
 
+" Fast CtrlP matcher using Vim's matchfuzzy() without dependencies.
+call dein#add('mattn/ctrlp-matchfuzzy')
+
 " Perform the replacement in quickfix.
 call dein#add('thinca/vim-qfreplace')
 
@@ -162,6 +165,18 @@ call dein#add('cohama/lexima.vim')
 " Support adding git commit prefix
 call dein#add('KosukeMizuno/vim-git-commit-prefix')
 
+" Typescript Syntax for Vim
+call dein#add('leafgarland/typescript-vim')
+
+" Syntax files for Solidity, the contract-oriented programming language for Ethereum.
+call dein#add('tomlion/vim-solidity')
+
+" Vim plugin for metrics, insights, and time tracking automatically generated from your programming activity.
+call dein#add('wakatime/vim-wakatime')
+
+" this plugin exists to allow vim to replace the Processing IDE to develop sketches.
+call dein#add('sophacles/vim-processing')
+
 " TabNine For Vim
 " call dein#add('codota/tabnine-vim')
 
@@ -217,6 +232,10 @@ set shiftwidth=2
 
 "不可視文字表示形式設定
 set list
+
+"読み込み専用ファイルを編集可能に
+set modifiable
+set write
 
 set lcs=tab:>-,eol:<,trail:-
 "ステータスラインの設定 分けて書いた方が見易いと思う
@@ -391,6 +410,8 @@ augroup END
 " for deplete.nvim
 "-----------------------------------
 let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '/usr/local/bin/python3.11'
+
 
 "-----------------------------------
 " for ack.vim
@@ -416,11 +437,12 @@ endif
 "-----------------------------------
 let g:ale_linters = {'javascript': ['eslint'],}
 let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 
 "-----------------------------------
 " for vim-rails
 "-----------------------------------
-let g:rails_ctags_arguments = ['--languages=Ruby --tag-relative --recurse --sort=yes  --append=no -f .git/tags']
+let g:rails_ctags_arguments = ['--languages=Ruby --tag-relative --recurse --sort=yes --append=no -f .git/tags']
 
 "-----------------------------------
 " for AutoSave
@@ -498,3 +520,8 @@ let g:git_commit_prefix_lang = 'en'
 "-----------------------------------
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
+
+"-----------------------------------
+" for vim-processing
+"-----------------------------------
+let g:processing_doc_style = 'web'

@@ -26,6 +26,8 @@ setopt interactive_comments
 # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 setopt magic_equal_subst
 
+# スペースで始まったら履歴に残さない
+setopt hist_ignore_space
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -175,6 +177,10 @@ function al() {
 
 function ml() {
   curl $1 -sL | xmllint --html --xpath 2>/dev/null "//head/title" - | sed -e "s;<title>;\[;g" -e "s;</title>;\]\(${1//&/\&}\);g" | pbcopy ; pbpaste
+}
+
+function kd() {
+  defaults write com.amazon.Kindle AppleLanguages "(ja)" && /Applications/Kindle.app/Contents/MacOS/Kindle
 }
 
 function sl() {
