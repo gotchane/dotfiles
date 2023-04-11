@@ -57,6 +57,9 @@ call dein#add('tomasr/molokai')
 " A vim theme inspired by Atom's default dark theme
 call dein#add('gosukiwi/vim-atom-dark')
 
+" Everforest is a green based color scheme
+call dein#add('sainnhe/everforest')
+
 " A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
 call dein#add('joshdick/onedark.vim')
 
@@ -177,6 +180,12 @@ call dein#add('wakatime/vim-wakatime')
 " this plugin exists to allow vim to replace the Processing IDE to develop sketches.
 call dein#add('sophacles/vim-processing')
 
+" All the lua functions I don't want to write twice.
+call dein#add('nvim-lua/plenary.nvim')
+
+" Gaze deeply into unknown regions using the power of the moon.
+call dein#add('nvim-telescope/telescope.nvim')
+
 " TabNine For Vim
 " call dein#add('codota/tabnine-vim')
 
@@ -284,7 +293,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 "カラースキームの設定
-colorscheme onedark
+colorscheme everforest
 
 "yamlの拡張子に変更
 autocmd BufRead,BufNewFile *.vm set filetype=velocity
@@ -412,6 +421,65 @@ augroup END
 let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/local/bin/python3.11'
 
+function! ToggleDeoplete()
+  if win_gettype(winnr()) ==# 'popup'
+    call deoplete#disable()
+  else
+    call deoplete#enable()
+  endif
+endfunction
+
+augroup toggle_deoplete_on_popup
+  autocmd!
+  autocmd CursorMoved,CursorMovedI * call ToggleDeoplete()
+augroup END
+
+"-----------------------------------
+" for utility command
+"-----------------------------------
+
+function! CopyRelativePathToClipboard()
+  let file_path = expand('%:p')
+  let dir_name = fnamemodify(file_path, ':h')
+  let file_name = fnamemodify(file_path, ':t')
+  let relative_path = substitute(file_path, getcwd().'/', '', '')
+  if has('macunix')
+    call system("echo '".relative_path."' | pbcopy")
+  else
+    call system("echo '".relative_path."' | xclip -selection clipboard")
+  endif
+  echo "Relative path copied to clipboard!"
+endfunction
+
+nnoremap <Leader>c :call CopyRelativePathToClipboard()<CR>
+
+function! OpenGithubRepository()
+  let repository_url = substitute(system("git config --get remote.origin.url"), '\n', '', '')
+  let repository_url = substitute(repository_url, '\.git$', '', '')
+  let url = substitute(repository_url, '^git@github\.com:', 'https://github.com/', '')
+  call system('open '.url)
+endfunction
+
+function! OpenGithubFile()
+  let repository_url = substitute(system("git config --get remote.origin.url"), '\n', '', '')
+  let repository_url = substitute(repository_url, '\.git$', '', '')
+  let repository_url = substitute(repository_url, '^git@github\.com:', 'https://github.com/', '')
+  let file_path = expand('%:p')
+  let account_name = matchstr(repository_url, 'github\.com\/\zs[^\/]*')
+  let repo_name = matchstr(repository_url, '\zs[^\/]*\/[^\/]*\ze')
+  let default_branch = substitute(system("git symbolic-ref refs/remotes/origin/HEAD | awk -F'[/]' '{print $NF}'"), '\n', '', '')
+  let url = repository_url.'/find/'.default_branch
+  call system('open '.url)
+endfunction
+
+function! SearchFileByGithub()
+  call CopyRelativePathToClipboard()
+  call OpenGithubFile()
+endfunction
+
+nnoremap <Leader>rr :call OpenGithubRepository()<CR>
+nnoremap <Leader>rf :call OpenGithubFile()<CR>
+nnoremap <Leader>rs :call SearchFileByGithub()<CR>
 
 "-----------------------------------
 " for ack.vim
@@ -429,8 +497,29 @@ vnoremap <Leader>g y:Ack! <C-r>=fnameescape(@")<CR><CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 if executable('rg')
   let g:ctrlp_user_command = 'rg --files %s'
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching = 1
 endif
+
+"-----------------------------------
+" for telescope
+"-----------------------------------
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+function! ToggleDeoplete()
+  if exists(':Telescope') && match(getcmdline(), 'Telescope find_files') >= 0
+    call deoplete#disable()
+  else
+    call deoplete#enable()
+  endif
+endfunction
+
+augroup toggle_deoplete_on_telescope
+  autocmd!
+  autocmd CmdlineEnter : call ToggleDeoplete()
+augroup END
 
 "-----------------------------------
 " for ale
